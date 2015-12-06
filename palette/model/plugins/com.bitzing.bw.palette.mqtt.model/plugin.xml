@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+ Overridable true
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ns.tibco.com/bw/palette/mqtt"
+            class="com.bitzing.bw.palette.mqtt.model.mqtt.MqttPackage"/>
+   </extension>
+   <extension
+         point="com.tibco.bw.model.ActivityIcon">
+    <activityIcon
+            activityTypeID="bw.mqtt.MQTTPublishActivity"
+            diagramIcon="icons/obj48/MQTT_Publish_48x48.png"
+            largeIcon="icons/obj32/MQTT_Publish_32x32.png"
+            smallIcon="icons/obj16/MQTT_Publish_16x16.png">
+      </activityIcon>
+    <activityIcon
+            activityTypeID="bw.mqtt.MQTTMessageSubscriber"
+            diagramIcon="icons/obj48/MQTT_Subscribe_48x48.png"
+            largeIcon="icons/obj32/MQTT_Subscribe_32x32.png"
+            smallIcon="icons/obj16/MQTT_Subscribe_16x16.png">
+      </activityIcon>
+    </extension>
+</plugin>

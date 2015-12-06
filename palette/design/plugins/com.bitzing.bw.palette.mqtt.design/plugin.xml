@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+ Overridable true
+ $Id$
+-->
+
+<plugin>
+
+   <extension
+         point="com.tibco.bw.design.Palette">
+      <paletteDrawer
+            expanded="false"
+            largeIcon="icons/obj32/MQTT_32x32.png"
+            name="%mqtt.palette.name"
+            paletteID="bw.mqtt"
+            priority="500"
+            productID="bw.mqtt.product"
+            smallIcon="icons/obj16/MQTT_16x16.png"
+            tooltip="%mqtt.palette.tooltip">
+      </paletteDrawer>
+   </extension>
+   
+   <extension
+         point="com.tibco.bw.design.ActivityType">
+      <activityType
+            activityTypeID="bw.mqtt.MQTTPublishActivity"
+            name="%mqtt.activity.MQTTPublishActivity.name"
+            type="Standard"
+            priority="100"
+            tooltip="%mqtt.activity.MQTTPublishActivity.tooltip"
+            visible="true">
+         <palette
+               paletteID="bw.mqtt">
+         </palette>
+      </activityType>
+
+      <activityType
+            activityTypeID="bw.mqtt.MQTTMessageSubscriber"
+            name="%mqtt.activity.MQTTMessageSubscriber.name"
+            isEventSource="true"
+            canCreateInstance="true"
+            type="Starter"
+            priority="100"
+            tooltip="%mqtt.activity.MQTTMessageSubscriber.tooltip"
+            visible="true">
+         <palette
+               paletteID="bw.mqtt">
+         </palette>
+      </activityType>
+
+      
+   </extension>
+   
+     <extension
+         point="com.tibco.bw.design.ActivitySignature">
+      <signature
+            activityTypeID="bw.mqtt.MQTTPublishActivity"
+            signatureClass="com.bitzing.bw.palette.mqtt.design.mqttpublishactivity.MQTTPublishActivitySignature">
+      </signature>
+      <signature
+            activityTypeID="bw.mqtt.MQTTMessageSubscriber"
+            signatureClass="com.bitzing.bw.palette.mqtt.design.mqttmessagesubscriber.MQTTMessageSubscriberSignature">
+      </signature>
+   </extension>
+   
+   <extension
+         point="com.tibco.bw.design.ActivityTypeConfigEMF">
+      <config
+            activityTypeID="bw.mqtt.MQTTPublishActivity"
+            eClassName="MQTTPublishActivity"
+            ePackageNSURI="http://ns.tibco.com/bw/palette/mqtt"
+            instanceName="%mqtt.activity.default.MQTTPublishActivity.name"
+            modelHelperClass="com.bitzing.bw.palette.mqtt.design.mqttpublishactivity.MQTTPublishActivityModelHelper">
+      </config>
+      <config
+            activityTypeID="bw.mqtt.MQTTMessageSubscriber"
+            eClassName="MQTTMessageSubscriber"
+            ePackageNSURI="http://ns.tibco.com/bw/palette/mqtt"
+            instanceName="%mqtt.activity.default.MQTTMessageSubscriber.name"
+            modelHelperClass="com.bitzing.bw.palette.mqtt.design.mqttmessagesubscriber.MQTTMessageSubscriberModelHelper">
+      </config>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="com.tibco.bw.core.design.process.editor">
+         <propertySection
+               afterSection="com.tibco.bw.design.activity.general"
+               class="com.bitzing.bw.palette.mqtt.design.mqttpublishactivity.MQTTPublishActivityGeneralSection"
+               filter="com.bitzing.bw.palette.mqtt.design.mqttpublishactivity.MQTTPublishActivityGeneralSection"
+               id="bw.mqtt.MQTTPublishActivity.general"
+               tab="tibco.bw.activity.property.tab.general">
+         </propertySection>
+         <propertySection
+               afterSection="com.tibco.bw.design.activity.general"
+               class="com.bitzing.bw.palette.mqtt.design.mqttmessagesubscriber.MQTTMessageSubscriberGeneralSection"
+               filter="com.bitzing.bw.palette.mqtt.design.mqttmessagesubscriber.MQTTMessageSubscriberGeneralSection"
+               id="bw.mqtt.MQTTMessageSubscriber.general"
+               tab="tibco.bw.activity.property.tab.general">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   <extension
+         point="com.tibco.bw.design.BWContextHelp">
+      <plugin
+            defaultURL="file:///home/yogesh/work/bw6-workspace/MQTT/doc/index.html"
+            id="bw.mqtt.product"
+            name="BusinessWorks MQTT Plugin">
+      </plugin>
+   </extension>
+   
+</plugin>
