@@ -1,5 +1,4 @@
-# tibcobw6-mqtt-connector
-TIBCO ActiveMatrix BusinessWorks 6 Plugin for MQTT
+# TIBCO ActiveMatrix BusinessWorks 6 Plugin for MQTT
 
 This plugin is developed using TIBCO ActiveMatrix BusinessWorks Plug-in Development Kit 6.1.0
 with TIBCO ActiveMatrix BusinessWorks 6.2.1.
