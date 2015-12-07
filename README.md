@@ -6,7 +6,9 @@ with TIBCO ActiveMatrix BusinessWorks 6.2.1.
 Please note that the MQTT plugin uses eclipse paho 1.0.2 java client library and it is only tested 
 on the mosquitto MQTT broker. 
 
-The plugin is not completely tested and lacks some support of error handling.
+
+The plugin is not completely tested and lacks some support of error handling and SSL connection. I am planning to finish these changes soon.
+
 The online help document, installer and the update site is still in works. I will add more details
 soon.
 
